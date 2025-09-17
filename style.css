@@ -1,0 +1,147 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow: hidden;
+    background-color: #000;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#gameCanvas {
+    display: block;
+    cursor: crosshair;
+}
+
+/* UI Overlay */
+#ui-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1000;
+}
+
+/* Allow interactions on specific UI elements */
+.info-panel {
+    pointer-events: auto;
+}
+
+/* Status Indicator */
+.status-indicator {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 10px 15px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    pointer-events: auto;
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #ff6b6b;
+    animation: pulse 2s infinite;
+}
+
+.status-dot.connected {
+    background-color: #51cf66;
+}
+
+@keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+
+/* Info Panels */
+.info-panel {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    min-width: 200px;
+}
+
+.info-panel h3 {
+    margin-bottom: 10px;
+    color: #74c0fc;
+    font-size: 16px;
+}
+
+.info-panel p {
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+.info-panel ul {
+    list-style: none;
+    max-height: 120px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-right: 5px;
+    margin: 0;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.info-panel li {
+    padding: 4px 8px;
+    font-size: 13px;
+    color: #e9ecef;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.info-panel li:last-child {
+    border-bottom: none;
+}
+
+/* Panel Positioning */
+#player-info {
+    top: 20px;
+    left: 20px;
+}
+
+#players-list {
+    top: 20px;
+    left: 250px;
+}
+
+#controls-help {
+    bottom: 20px;
+    right: 20px;
+}
+
+/* Scrollbar Styling */
+.info-panel ul::-webkit-scrollbar {
+    width: 6px;
+}
+
+.info-panel ul::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+}
+
+.info-panel ul::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 3px;
+}
+
+.info-panel ul::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.5);
+}

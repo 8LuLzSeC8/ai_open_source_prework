@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini MMORPG Client</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <canvas id="gameCanvas"></canvas>
+    
+    <!-- UI Overlay -->
+    <div id="ui-overlay">
+        <!-- Connection Status -->
+        <div id="connection-status" class="status-indicator">
+            <span class="status-dot"></span>
+            <span class="status-text">Connecting...</span>
+        </div>
+        
+        <!-- Player Info -->
+        <div id="player-info" class="info-panel">
+            <h3>Player: <span id="player-name">-</span></h3>
+            <p>Position: <span id="player-position">-</span></p>
+        </div>
+        
+        <!-- Online Players -->
+        <div id="players-list" class="info-panel">
+            <h3>Online Players (<span id="player-count">0</span>)</h3>
+            <ul id="players-ul"></ul>
+        </div>
+        
+        <!-- Controls Help -->
+        <div id="controls-help" class="info-panel">
+            <h3>Controls</h3>
+            <p><strong>Movement:</strong> WASD or Arrow Keys</p>
+            <p><strong>Click:</strong> Move to location</p>
+            <p><strong>Diagonal:</strong> Hold multiple keys</p>
+        </div>
+    </div>
+    
+    <script src="game.js"></script>
+</body>
+</html>
